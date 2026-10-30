@@ -1,4 +1,4 @@
-# fuxi full bring-up, Pong-style native storage chain.
+﻿# fuxi full bring-up, Pong-style native storage chain.
 #
 # Full union SystemOS bring-up, Pong/sheng-style. NativeUfs supplies the
 # UFS windows and provides the UFS authentication callback; NativeVirtioBlock
@@ -47,6 +47,6 @@ CONFIG_XNU_ARMVIRT_PLATFORM=n
 CONFIG_XNU_BOOT_PROGRESS=y
 CONFIG_XNU_NATIVE_ADRENO=y
 CONFIG_XNU_NATIVE_LEGACY_DISPLAY=y
-CONFIG_XNU_SHENG_PMGR=y
+CONFIG_XNU_SHENG_PMGR=n
 CONFIG_XNU_SOURCE_MOCKFS=n
 CONFIG_XNU_ZONE_PGZ_ALIGNMENT_PROBE=n
