@@ -63,7 +63,6 @@ archives = [
   "prepare-fuxi-command-db-oracle.py",
   "build-arm-driver.py Adreno740",
   "build-adreno740-kits.py",
-  "build-adreno740-accelerator.py",
 ]
 
 
