@@ -363,3 +363,11 @@ int sheng_boot_setup_reset(void) { return 0; }
 int sheng_boot_watchdog_policy(void) { return 0; }
 __attribute__((weak)) volatile uint64_t sheng_pmgr_observation;
 __attribute__((weak)) volatile uint64_t sheng_watchdog_policy_status;
+
+/* generic fallbacks: every global the package defines, minus the two linked files */
+__attribute__((weak)) volatile uint64_t boot_ui_trace_rows;
+__attribute__((weak)) volatile uint64_t fuxi_usb_append;
+__attribute__((weak)) volatile uint64_t fuxi_usb_debug_start;
+__attribute__((weak)) volatile uint64_t native_verified_block_manifest_sha384;
+__attribute__((weak)) volatile uint64_t native_verified_block_root_authorized;
+__attribute__((weak)) volatile uint64_t native_verified_root_probe;
