@@ -95,3 +95,15 @@ __attribute__((weak)) volatile unsigned char native_verified_block_manifest_sha3
 __attribute__((weak)) int native_legacy_display_probe(void) { return 0; }
 __attribute__((weak)) int native_verified_root_probe(void) { return 0; }
 __attribute__((weak)) void fuxi_usb_debug_start(void) { }
+
+__attribute__((weak)) volatile uint32_t native_legacy_pm_calls;
+__attribute__((weak)) volatile uint32_t native_legacy_pm_stage;
+__attribute__((weak)) volatile uint32_t native_legacy_prepare_attempts;
+__attribute__((weak)) volatile uint32_t native_legacy_prepare_calls;
+__attribute__((weak)) volatile uint32_t native_legacy_prepare_reason;
+__attribute__((weak)) volatile uint32_t native_legacy_rej_class;
+__attribute__((weak)) volatile uint32_t native_legacy_rej_reason;
+__attribute__((weak)) volatile uint32_t native_legacy_rej_state;
+__attribute__((weak)) volatile uint64_t native_legacy_rej_surface;
+__attribute__((weak)) volatile uint32_t native_legacy_rej_size[2];
+__attribute__((weak)) volatile uint64_t native_legacy_rej_surfaces[4];
