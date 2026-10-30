@@ -212,8 +212,6 @@ __attribute__((weak)) volatile uint64_t native_touch_probe;
 __attribute__((weak)) volatile uint64_t sheng_cpufreq_probe;
 
 /* weak function fallbacks */
-__attribute__((weak)) int native_legacy_display_probe(void) { return 0; }
-__attribute__((weak)) int native_verified_root_probe(void) { return 0; }
 __attribute__((weak)) int fuxi_usb_debug_start(void) { return 0; }
 __attribute__((weak)) int sheng_cpufreq_poll(void) { return 0; }
 __attribute__((weak)) int native_legacy_display_late_probe(void) { return 0; }
