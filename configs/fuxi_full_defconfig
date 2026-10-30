@@ -1,4 +1,4 @@
-﻿# fuxi full bring-up, Pong-style native storage chain.
+# fuxi full bring-up, Pong-style native storage chain.
 #
 # Full union SystemOS bring-up, Pong/sheng-style. NativeUfs supplies the
 # UFS windows and provides the UFS authentication callback; NativeVirtioBlock

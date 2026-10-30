@@ -1,4 +1,4 @@
-﻿# Board description of the Xiaomi 13 (fuxi, SM8550), read by the unixnu build driver.
+# Board description of the Xiaomi 13 (fuxi, SM8550), read by the unixnu build driver.
 
 [board]
 name = "fuxi"
