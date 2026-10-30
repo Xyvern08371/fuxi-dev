@@ -37,7 +37,23 @@ def compile_like(record, source, destination, extra):
         elif not value.startswith('-W'):
             command.append(value)
         index += 1
-    command += extra
+    # The framework's bootstrap pass compiles the records with XNU_BOOT_PROGRESS=0, and
+    # every archive reuses those arguments. Force the overlay's own translation unit to see
+    # the real prototypes instead of the ((void)0) macros.
+    _boot_progress_override = []
+    _i = 0
+    while _i < len(command):
+        _v = command[_i]
+        if _v == '-D' and _i + 1 < len(command) and command[_i + 1].startswith('XNU_BOOT_PROGRESS='):
+            _i += 2
+            continue
+        if _v.startswith('-DXNU_BOOT_PROGRESS='):
+            _i += 1
+            continue
+        _boot_progress_override.append(_v)
+        _i += 1
+    _boot_progress_override.append('-DXNU_BOOT_PROGRESS=1')
+    command = _boot_progress_override + extra
     subprocess.run(command, cwd=record['directory'], check=True, timeout=90)
     return destination
 
