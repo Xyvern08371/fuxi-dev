@@ -371,3 +371,11 @@ __attribute__((weak)) volatile uint64_t fuxi_usb_debug_start;
 __attribute__((weak)) volatile uint64_t native_verified_block_manifest_sha384;
 __attribute__((weak)) volatile uint64_t native_verified_block_root_authorized;
 __attribute__((weak)) volatile uint64_t native_verified_root_probe;
+
+/* overlay trace globals only declared as extern */
+__attribute__((weak)) volatile uint64_t boot_ui_trace_index;
+__attribute__((weak)) volatile uint64_t boot_ui_trace_label;
+__attribute__((weak)) volatile uint64_t boot_ui_trace_phase;
+__attribute__((weak)) volatile uint64_t boot_ui_trace_ready;
+__attribute__((weak)) volatile uint64_t boot_ui_trace_role_rows;
+__attribute__((weak)) volatile uint64_t boot_ui_trace_snapshot;
