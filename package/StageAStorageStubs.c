@@ -136,7 +136,6 @@ __attribute__((weak)) volatile uint64_t native_legacy_copy_sum;
 __attribute__((weak)) volatile uint64_t native_legacy_copy_timing_observed;
 __attribute__((weak)) volatile uint64_t native_legacy_display_allocate;
 __attribute__((weak)) volatile uint64_t native_legacy_display_checkpoint;
-__attribute__((weak)) volatile uint64_t native_legacy_display_late_probe;
 __attribute__((weak)) volatile uint64_t native_legacy_display_static_init;
 __attribute__((weak)) volatile uint64_t native_legacy_dt_attached;
 __attribute__((weak)) volatile uint64_t native_legacy_frame_color_counts;
@@ -197,7 +196,6 @@ __attribute__((weak)) volatile uint64_t native_legacy_surface_found;
 __attribute__((weak)) volatile uint64_t native_legacy_surface_rejected;
 __attribute__((weak)) volatile uint64_t native_legacy_surface_status;
 __attribute__((weak)) volatile uint64_t native_legacy_swap_request;
-__attribute__((weak)) volatile uint64_t native_legacy_swap_stage;
 __attribute__((weak)) volatile uint64_t native_legacy_swap_surface;
 __attribute__((weak)) volatile uint64_t native_legacy_swap_timeline;
 __attribute__((weak)) volatile uint64_t native_legacy_swap_validation_checkpoint;
@@ -212,3 +210,11 @@ __attribute__((weak)) volatile uint64_t native_legacy_vsync_observed;
 __attribute__((weak)) volatile uint64_t native_legacy_workloop;
 __attribute__((weak)) volatile uint64_t native_touch_probe;
 __attribute__((weak)) volatile uint64_t sheng_cpufreq_probe;
+
+/* weak function fallbacks */
+__attribute__((weak)) int native_legacy_display_probe(void) { return 0; }
+__attribute__((weak)) int native_verified_root_probe(void) { return 0; }
+__attribute__((weak)) int fuxi_usb_debug_start(void) { return 0; }
+__attribute__((weak)) int sheng_cpufreq_poll(void) { return 0; }
+__attribute__((weak)) int native_legacy_display_late_probe(void) { return 0; }
+__attribute__((weak)) int native_legacy_swap_stage(void) { return 0; }
