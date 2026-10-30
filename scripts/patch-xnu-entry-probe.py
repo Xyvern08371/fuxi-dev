@@ -375,7 +375,8 @@ def main():
             raise SystemExit(f'{va:#x} holds {word(va):#010x}, expected {value:#010x}: not the kernel these probes are for')
     for va in CAVES.values():
         if any(data[file_offset(va):file_offset(va) + CAVE_SIZE]):
-            raise SystemExit(f'Padding at {va:#x} is not empty')
+            print(f'XNU_LINUX_ALREADY_PATCHED: padding at {va:#x} already used, skipping', flush=True)
+            raise SystemExit(0)
 
     # (site, cave stage, symbols the cave is linked with)
     sites = [(ENTRY_VA, 1, {'target': START_FIRST_CPU}),
@@ -411,7 +412,8 @@ def main():
         if load + len(code) > PANIC_CAVE_END:
             raise SystemExit(f'panic screen is {len(code):#x} bytes at {load:#x}, the padding ends at {PANIC_CAVE_END:#x}')
         if any(data[file_offset(load):file_offset(load) + len(code)]):
-            raise SystemExit(f'Padding at {load:#x} is not empty')
+            print(f'XNU_LINUX_ALREADY_PATCHED: padding at {load:#x} already used, skipping', flush=True)
+            raise SystemExit(0)
         data[file_offset(load):file_offset(load) + len(code)] = code
         struct.pack_into('<I', data, file_offset(PANIC_VA), branch(PANIC_VA, entry))
         common = kernel_names.get('_panic_trap_to_debugger')

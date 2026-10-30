@@ -42,6 +42,7 @@ for LATE_PATCH in "$ROOT/patches/xnu/zzzc-boot-log.patch" "$ROOT/patches/xnu/zzz
   fi
 done
 for PATCH in "$ROOT"/patches/xnu/*.patch "$ROOT"/kits/NativePrelink/patches/*.patch; do
+  [ -f "$PATCH" ] || continue
   if ! git -C .cache/xnu-work apply --reverse --check "$PATCH" >/dev/null 2>&1; then
     git -C .cache/xnu-work apply --check "$PATCH"
     git -C .cache/xnu-work apply "$PATCH"
