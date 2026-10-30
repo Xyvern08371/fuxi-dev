@@ -92,8 +92,6 @@ __attribute__((weak)) volatile int native_verified_block_root_authorized;
 __attribute__((weak)) volatile uint64_t native_verified_block_volume_device;
 __attribute__((weak)) volatile unsigned char native_verified_block_manifest_sha384[48];
 
-__attribute__((weak)) int native_legacy_display_probe(void) { return 0; }
-__attribute__((weak)) int native_verified_root_probe(void) { return 0; }
 __attribute__((weak)) void fuxi_usb_debug_start(void) { }
 
 __attribute__((weak)) volatile uint32_t native_legacy_pm_calls;
@@ -211,8 +209,4 @@ __attribute__((weak)) volatile uint64_t native_legacy_workloop;
 __attribute__((weak)) volatile uint64_t native_touch_probe;
 __attribute__((weak)) volatile uint64_t sheng_cpufreq_probe;
 
-/* weak function fallbacks */
-__attribute__((weak)) int fuxi_usb_debug_start(void) { return 0; }
-__attribute__((weak)) int sheng_cpufreq_poll(void) { return 0; }
-__attribute__((weak)) int native_legacy_display_late_probe(void) { return 0; }
-__attribute__((weak)) int native_legacy_swap_stage(void) { return 0; }
+
