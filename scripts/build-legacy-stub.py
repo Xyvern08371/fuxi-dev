@@ -44,13 +44,18 @@ subprocess.run(command, cwd=record['directory'], check=True, timeout=90)
 
 # The boot-progress overlay calls the touch and cpufreq probes; stage A links
 # before those archives exist, so the package's own stubs answer for them.
-stubs = ROOT / 'kits/sheng/StageAStorageStubs.c'
 objs = [obj]
+stubs = ROOT / 'kits/sheng/StageAStorageStubs.c'
 if stubs.is_file():
     stub_obj = OUT / 'StageAStorageStubs.o'
-    stub_cmd = [str(obj) if str(a) == str(source) else str(a) for a in command[:command.index(str(OUT / 'LegacyDisplayStub.o'))]]
-    stub_cmd = [str(stubs) if c == str(source) else c for c in stub_cmd]
-    stub_cmd = [str(stub_obj) if c == str(OUT / 'LegacyDisplayStub.o') else c for c in stub_cmd]
+    stub_cmd = []
+    for c in command:
+        if c == str(source):
+            stub_cmd.append(str(stubs))
+        elif c == str(obj):
+            stub_cmd.append(str(stub_obj))
+        else:
+            stub_cmd.append(c)
     subprocess.run(stub_cmd, cwd=record['directory'], check=True, timeout=90)
     objs.append(stub_obj)
 
