@@ -55,13 +55,15 @@ archives = [
   "build-arm-driver.py NativeUfs --verified-root --verified-root-bundle",
   "build-arm-driver.py NativeVirtioBlock --verified-root --verified-root-bundle",
   "build-arm-driver.py NativeRamBlock",
-  "build-sheng-platform-power.py",
-  "build-boot-progress.py",
   "build-libpthread-kernel.py",
+  "build-legacy-stub.py",
+  "build-boot-progress.py",
+  "prepare-fuxi-gmu.py --dtb {tree}/uefi-fuxi/Resources/DTBs/fuxi.dtb",
+  "prepare-fuxi-gmu-votes.py --dtb {tree}/uefi-fuxi/Resources/DTBs/fuxi.dtb",
+  "prepare-fuxi-command-db-oracle.py",
   "build-arm-driver.py Adreno740",
   "build-adreno740-kits.py",
   "build-adreno740-accelerator.py",
-  "build-native-legacy-display.py",
 ]
 
 
