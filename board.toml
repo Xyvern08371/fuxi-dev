@@ -58,6 +58,7 @@ archives = [
   "build-libpthread-kernel.py",
   "build-legacy-stub.py",
   "build-boot-progress.py",
+  "build-fuxi-verified-root-policy.py",
   "prepare-fuxi-gmu.py",
   "prepare-fuxi-gmu-votes.py",
   "prepare-fuxi-command-db-oracle.py",
