@@ -72,3 +72,26 @@ sheng_cpufreq_poll (
   )
 {
 }
+
+/* stage-A weak fallbacks for archives that are not built in this configuration */
+__attribute__((weak)) volatile uint32_t native_legacy_stage;
+__attribute__((weak)) volatile uint32_t native_legacy_swap_validation_calls;
+__attribute__((weak)) volatile uint32_t native_legacy_swap_validation_result;
+__attribute__((weak)) volatile uint32_t native_legacy_swap_validation_reason;
+__attribute__((weak)) volatile uint32_t native_legacy_swap_accepted_count;
+__attribute__((weak)) volatile uint32_t native_legacy_swap_rejected_count;
+__attribute__((weak)) volatile uint32_t native_legacy_retirement_calls;
+__attribute__((weak)) volatile uint32_t native_legacy_retired_generation;
+__attribute__((weak)) volatile uint32_t native_legacy_presented_generation;
+__attribute__((weak)) volatile uint32_t native_legacy_retired_frames;
+__attribute__((weak)) volatile uint64_t native_legacy_transfer_calls;
+__attribute__((weak)) volatile uint64_t native_legacy_transfer_bytes;
+__attribute__((weak)) volatile uint32_t native_ram_block_gpu_addon;
+__attribute__((weak)) volatile uint64_t native_ram_block_volume_seed;
+__attribute__((weak)) volatile int native_verified_block_root_authorized;
+__attribute__((weak)) volatile uint64_t native_verified_block_volume_device;
+__attribute__((weak)) volatile unsigned char native_verified_block_manifest_sha384[48];
+
+__attribute__((weak)) int native_legacy_display_probe(void) { return 0; }
+__attribute__((weak)) int native_verified_root_probe(void) { return 0; }
+__attribute__((weak)) void fuxi_usb_debug_start(void) { }

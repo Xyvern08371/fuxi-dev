@@ -57,6 +57,7 @@ archives = [
   "build-arm-driver.py NativeRamBlock",
   "build-libpthread-kernel.py",
   "build-legacy-stub.py",
+  "build-fuxi-usb-debug.py",
   "build-boot-progress.py",
   "build-fuxi-verified-root-policy.py",
   "prepare-fuxi-gmu.py",
